@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://opendata.arcgis.com/datasets/686603e943f948acaa13fb5d2b0f1275_3.geojson",
+    "format": {"property": "features"}
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "properties.lad16nm",
+        "oneOf": [
+          "Bolton",
+          "Bury",
+          "Manchester",
+          "Oldham",
+          "Rochdale",
+          "Salford",
+          "Stockport",
+          "Tameside",
+          "Trafford",
+          "Wigan"
+        ]
+      }
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eee",
+        "stroke": "#757575",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": {"field": "properties.lad16nm", "type": "nominal"},
+        "longitude": {"field": "properties.long", "type": "quantitative"},
+        "latitude": {"field": "properties.lat", "type": "quantitative"},
+        "size": {"value": 10},
+        "opacity": {"value": 0.6}
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.24.2"></script>
+</head>
+<body>
+
+  <div id="vis"></div>
+
+  <script type="text/javascript">
+    vegaEmbed('#vis', "map_choropleth.vl.json", {defaultStyle: true}).catch(console.warn);
+  </script>
+</body>
+</html>

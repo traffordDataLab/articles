@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "width": 500,
+  "height": 300,
+  "title": "Child poverty in Greater Manchester",
+  "data": {"url": "https://opendata.arcgis.com/datasets/fab4feab211c4899b602ecfbfbc420a3_3.geojson", "format": {"property": "features"}},
+  "transform": [
+    {"filter": {"field": "properties.lad17nm", "oneOf": ["Bolton","Bury","Manchester","Oldham","Rochdale","Salford","Stockport","Tameside","Trafford","Wigan"]}},
+    {
+      "lookup": "properties.lad17nm",
+      "from": {
+        "data": {"values": [
+          {"lad17nm": "Bolton", "percent": 0.34},
+          {"lad17nm": "Bury", "percent": 0.27},
+          {"lad17nm": "Manchester", "percent": 0.44},
+          {"lad17nm": "Oldham", "percent": 0.41},
+          {"lad17nm": "Rochdale", "percent": 0.36},
+          {"lad17nm": "Salford", "percent": 0.32},
+          {"lad17nm": "Stockport", "percent": 0.21},
+          {"lad17nm": "Tameside", "percent": 0.3},
+          {"lad17nm": "Trafford", "percent": 0.22},
+          {"lad17nm": "Wigan", "percent": 0.25}
+        ]},
+        "key": "lad17nm",
+        "fields": ["lad17nm", "percent"]
+      }
+    }
+  ],
+"projection": {
+    "type": "mercator"
+  },
+  "mark": {
+        "type": "geoshape",
+        "stroke": "#212121",
+        "strokeWidth": 1
+      },
+  "encoding": {
+    "color": {
+      "field": "percent",
+      "type": "quantitative",
+      "scale": {"scheme": "Oranges"},
+    "legend": {
+            "title": null,
+            "format": "%"
+          }},
+    "tooltip": [
+          {"field": "properties.lad17nm", "type": "nominal", "title": "Name"},
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1%",
+            "title": "Child poverty"
+          }
+        ]
+  }
+}
