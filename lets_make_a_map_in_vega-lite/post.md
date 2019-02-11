@@ -213,10 +213,10 @@ The high-level JSON syntax used by Vega-Lite allows users to quickly create maps
 
 **JSON files used in this post**
 
-- [Default map](https://github.com/traffordDataLab/articles/lets_make_a_map_in_vega-lite/json/map_default.vl.json)
-- [Map with stroke and fill](https://github.com/traffordDataLab/articles/lets_make_a_map_in_vega-lite/json/map_stroke_and_fill.vl.json)
-- [Map with labels](https://github.com/traffordDataLab/articles/lets_make_a_map_in_vega-lite/json/map_labels.vl.json)
-- [Map with tooltips](https://github.com/traffordDataLab/articles/lets_make_a_map_in_vega-lite/json/map_tooltips.vl.json)
-- [Choropleth map](https://github.com/traffordDataLab/articles/lets_make_a_map_in_vega-lite/json/map_choropleth.vl.json)
+- [Default map](https://www.trafforddatalab.io/articles/lets_make_a_map_in_vega-lite/json/map_default.vl.json)
+- [Map with stroke and fill](https://www.trafforddatalab.io/articles/lets_make_a_map_in_vega-lite/json/map_stroke_and_fill.vl.json)
+- [Map with labels](https://www.trafforddatalab.io/articles/lets_make_a_map_in_vega-lite/json/map_labels.vl.json)
+- [Map with tooltips](https://www.trafforddatalab.io/articles/lets_make_a_map_in_vega-lite/json/map_tooltips.vl.json)
+- [Choropleth map](https://www.trafforddatalab.io/articles/lets_make_a_map_in_vega-lite/json/map_choropleth.vl.json)
 
 *This is a nod to Mike Bostock’s [Let’s Make a Map](https://bost.ocks.org/mike/map/)
