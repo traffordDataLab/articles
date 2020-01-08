@@ -1,1 +1,1 @@
-Trafford Data Lab (2020). 'Exploring tweets in R' [Blog] Medium. Available at: []()
+Trafford Data Lab (2020). 'Exploring tweets in R' [Blog] Medium. Available at: [https://medium.com/@traffordDataLab/exploring-tweets-in-r-54f6011a193d](https://medium.com/@traffordDataLab/exploring-tweets-in-r-54f6011a193d)
