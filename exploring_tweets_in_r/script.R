@@ -74,12 +74,27 @@ tweets %>%
   top_n(10)
 
 # top hashtags
-tweets %>% 
+hashtags <- tweets %>% 
   unnest_tokens(hashtag, text, "tweets", to_lower = FALSE) %>%
   filter(str_detect(hashtag, "^#"),
          hashtag != "#ClimateEmergency") %>%
   count(hashtag, sort = TRUE) %>%
   top_n(10)
+
+ggplot(hashtags, aes(fct_reorder(hashtag, n), n)) +
+  geom_col(fill = "#F29545") +
+  geom_hline(yintercept = 0, size = 1, colour = "#333333") +
+  scale_y_continuous(expand = c(0.005, 0.005)) +
+  coord_flip() +
+  labs(x = NULL, y = NULL,
+       title = "Other hashtags in #ClimateEmergency tweets",
+       subtitle = paste0(format(min(tweets$created_at), "%d %B %Y"), " to ", format(max(tweets$created_at),"%d %B %Y")),
+       caption = "Data collected from Twitter's REST API via rtweet") +
+  theme_minimal() +
+  theme(panel.grid.major.y = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.title = element_text(face = "bold"),
+        plot.caption = element_text(margin = margin(t = 15)))
 
 # top username mentions
 tweets %>% 
